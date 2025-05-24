@@ -1,0 +1,35 @@
+.jobs-container {
+  padding: 3% 6%;
+  display: flex;
+  gap: 20px;
+}
+.filter-section {
+  width: 30%;
+}
+.jobs-section {
+  width: 70%;
+}
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+.error-found-container,
+.no-job-found-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+.error-found-container button {
+  background-color: #5c67e6;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}

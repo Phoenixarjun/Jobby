@@ -1,0 +1,38 @@
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  border-radius: 10px;
+}
+.profile-heading {
+  font-size: 18px;
+  color: #6366f1;
+}
+.profile-description {
+  color: #6c7885;
+  font-size: 12px;
+}
+.employee-type h1,
+.salary-range h1 {
+  font-size: 14px;
+  color: white;
+}
+.filter-lists {
+  margin: 0;
+  padding: 0;
+  color: white;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+input{
+  margin: 0;
+}

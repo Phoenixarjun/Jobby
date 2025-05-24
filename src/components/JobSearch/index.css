@@ -1,0 +1,40 @@
+.jobSearch-container {
+  border: 1px solid #7e858e;
+  border-radius: 5px;
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchBox {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.searchBox:focus {
+  border: 0;
+  outline: none;
+}
+.searchBox::placeholder {
+  font-weight: bold;
+}
+.searchBtn {
+  background-color: #1e1e1c;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.search-icon {
+  font-size: 40px;
+  margin: 0;
+  color: white;
+  padding: 10px;
+  background-color: #1e1e1c;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

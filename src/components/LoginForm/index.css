@@ -1,0 +1,50 @@
+.LoginForm-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #252621;
+  padding: 30px;
+  border-radius: 10px;
+  gap: 10px;
+  width: 60vw;
+  transform: translateX(30%) translateY(30%);
+}
+.LoginForm-container img {
+  margin-bottom: 30px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-container label {
+  color: white;
+  font-size: 13px;
+}
+.input-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #7e858e;
+  background-color: transparent;
+  width: 50vw;
+  color: white;
+}
+.loginBtn {
+  background-color: #5c67e6;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+.error-message {
+  margin: 0;
+  color: #ff0b37;
+  align-self: flex-start;
+}
