@@ -21,7 +21,9 @@ const Home = () => {
               potential.
             </p>
             <Link to="/jobs">
-              <button className="home-btn">Find Jobs</button>
+              <button type="button" className="home-btn">
+                Find Jobs
+              </button>
             </Link>
           </div>
         </div>

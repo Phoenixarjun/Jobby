@@ -1,4 +1,4 @@
-import {useState, useEffect, useCallback} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import JobCard from '../JobCard'
@@ -118,7 +118,9 @@ const JobsPage = () => {
       />
       <h1>Oops! Something Went Wrong</h1>
       <p>We cannot seem to find the page you are looking for.</p>
-      <button onClick={onRetry}>Retry</button>
+      <button type="button" onClick={onRetry}>
+        Retry
+      </button>
     </div>
   )
 

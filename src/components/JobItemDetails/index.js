@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import './index.css'
 import {useParams} from 'react-router-dom'
 import Cookies from 'js-cookie'
@@ -24,7 +24,7 @@ const JobItemDetails = () => {
   const {id} = useParams()
   const jwtToken = Cookies.get('jwt_token')
 
-  const getJobItemDetails = async () => {
+  const getJobItemDetails = useCallback(async () => {
     setApiStatus(apiStatusConstants.inProgress)
     const url = `https://apis.ccbp.in/jobs/${id}`
     const options = {
@@ -74,11 +74,11 @@ const JobItemDetails = () => {
     } catch {
       setApiStatus(apiStatusConstants.failure)
     }
-  }
+  }, [id, jwtToken])
 
   useEffect(() => {
     getJobItemDetails()
-  }, [id])
+  }, [getJobItemDetails])
 
   const LoaderComponent = () => (
     <div className="loader-container" data-testid="loader">
@@ -95,7 +95,9 @@ const JobItemDetails = () => {
       />
       <h1>Oops! Something Went Wrong</h1>
       <p>We cannot seem to find the page you are looking for.</p>
-      <button onClick={onRetry}>Retry</button>
+      <button type="button" onClick={onRetry}>
+        Retry
+      </button>
     </div>
   )
 

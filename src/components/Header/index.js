@@ -30,7 +30,7 @@ const Header = () => {
           </Link>
         </li>
       </ul>
-      <button className="logoutBtn" onClick={handleLogOut}>
+      <button type="button" className="logoutBtn" onClick={handleLogOut}>
         Logout
       </button>
     </nav>
