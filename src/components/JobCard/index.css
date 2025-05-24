@@ -12,7 +12,7 @@
 
 .job-card-container:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .job-card-header {

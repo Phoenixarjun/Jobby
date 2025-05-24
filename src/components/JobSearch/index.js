@@ -25,7 +25,7 @@ const JobSearch = ({handleSearchJob, errorShown}) => {
       <button
         className="searchBtn"
         type="button"
-        testid="searchButton"
+        data-testid="searchButton"
         onClick={onClickSearchButton}
       >
         <BsSearch className="search-icon" />
