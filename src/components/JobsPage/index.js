@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import JobCard from '../JobCard'

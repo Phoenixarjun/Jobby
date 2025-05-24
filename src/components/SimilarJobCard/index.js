@@ -1,4 +1,3 @@
-import React from 'react'
 import {IoMdStar} from 'react-icons/io'
 import {MdLocalPostOffice} from 'react-icons/md'
 import {IoLocationSharp} from 'react-icons/io5'
