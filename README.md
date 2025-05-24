@@ -51,10 +51,10 @@ npm start
 
 ## 🧪 Login Credentials
 
-bash
+```bash
 Username: rahul
 Password: rahul@2021
-
+```
 
 > These credentials are for demo/testing purposes.
 
