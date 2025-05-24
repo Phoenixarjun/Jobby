@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react'
+import {useState, useEffect, useCallback} from 'react'
 import './index.css'
 import {useParams} from 'react-router-dom'
 import Cookies from 'js-cookie'
