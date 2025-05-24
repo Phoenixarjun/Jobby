@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import JobCard from '../JobCard'
@@ -36,12 +36,12 @@ const JobsPage = () => {
   const [minPackage, setMinPackage] = useState('')
   const [errorShown, setErrorShown] = useState(false)
 
-  const getJobs = async () => {
+  const getJobs = useCallback(async () => {
     setApiStatus(apiStatusConstants.inProgress)
     const jwtToken = Cookies.get('jwt_token')
     if (!jwtToken) {
-      console.error('JWT token not found!')
       setApiStatus(apiStatusConstants.failure)
+      setErrorShown(true)
       return
     }
 
@@ -78,25 +78,30 @@ const JobsPage = () => {
       setApiStatus(apiStatusConstants.failure)
       setErrorShown(true)
     }
-  }
+  }, [jobType, minPackage, search])
 
-  const handleSearchJob = searchInput => {
+  const handleSearchJob = useCallback(searchInput => {
     setSearch(searchInput)
-  }
+  }, [])
 
-  const handleJobTypeChange = employmentTypeId => {
+  const handleJobTypeChange = useCallback(employmentTypeId => {
     setJobType(prevState =>
       prevState.includes(employmentTypeId)
         ? prevState.filter(id => id !== employmentTypeId)
         : [...prevState, employmentTypeId],
     )
-  }
+  }, [])
 
-  const handlePackageChange = value => setMinPackage(value)
+  const handlePackageChange = useCallback(value => {
+    setMinPackage(value)
+  }, [])
 
   useEffect(() => {
-    getJobs()
-  }, [jobType, minPackage, search])
+    const timer = setTimeout(() => {
+      getJobs()
+    }, 500)
+    return () => clearTimeout(timer)
+  }, [jobType, minPackage, search, getJobs])
 
   const LoaderComponent = () => (
     <div className="loader-container" data-testid="loader">
@@ -108,7 +113,7 @@ const JobsPage = () => {
     <div className="error-found-container">
       <img
         src="https://assets.ccbp.in/frontend/react-js/jobby-app-not-found-img.png"
-        alt=" not found"
+        alt="not found"
         width={300}
       />
       <h1>Oops! Something Went Wrong</h1>

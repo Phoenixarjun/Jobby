@@ -5,56 +5,122 @@
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
+
+.job-card-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
 .job-card-header {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
+.job-card-logo {
+  border-radius: 8px;
+  object-fit: contain;
+}
+
 .job-card-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
+
 .job-card-title,
 .job-card-description-title {
   font-size: 18px;
+  margin: 0;
+  font-weight: 600;
 }
+
+.job-card-description-title {
+  margin-top: 12px;
+}
+
 .job-card-rating {
   display: flex;
   align-items: center;
-  gap: 5px;
-}
-.job-card-star-icon {
+  gap: 6px;
   color: #fdc038;
+  font-weight: 500;
 }
+
+.job-card-icon {
+  color: #fdc038;
+  font-size: 18px;
+}
+
 .job-card-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+
 .job-card-info-section {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
 }
+
 .job-card-location,
 .job-card-employment-type {
   display: flex;
   align-items: center;
-  gap: 5px;
-}
-.job-card-star-icon,
-.job-card-employment-icon {
-  margin: 0;
-}
-.job-card-divider {
-  width: 100%;
-}
-.job-card-description-text {
+  gap: 6px;
+  font-weight: 500;
   font-size: 14px;
 }
+
+.job-card-package {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.job-card-divider {
+  width: 100%;
+  border-color: #444;
+  margin: 12px 0;
+  border-style: solid;
+  border-width: 0.5px 0 0 0;
+}
+
+.job-card-description-text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .link {
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .job-card-container {
+    padding: 16px;
+  }
+  .job-card-header {
+    gap: 12px;
+  }
+  .job-card-title {
+    font-size: 16px;
+  }
+  .job-card-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .job-card-info-section {
+    gap: 12px;
+  }
+  .job-card-package {
+    margin-top: 8px;
+  }
 }

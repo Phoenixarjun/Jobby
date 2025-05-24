@@ -1,20 +1,29 @@
 .jobs-container {
-  padding: 3% 6%;
+  padding: 20px;
   display: flex;
+  flex-direction: column;
   gap: 20px;
 }
+
 .filter-section {
-  width: 30%;
+  width: 100%;
 }
+
 .jobs-section {
-  width: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
 .jobs-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 0;
+  margin: 0;
 }
+
 .error-found-container,
 .no-job-found-container {
   display: flex;
@@ -23,13 +32,51 @@
   flex-direction: column;
   gap: 20px;
   color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 .error-found-container button {
   background-color: #5c67e6;
-  padding: 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.error-found-container button:hover {
+  background-color: #4a54d1;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+@media (min-width: 768px) {
+  .jobs-container {
+    flex-direction: row;
+    padding: 3% 6%;
+  }
+
+  .filter-section {
+    width: 30%;
+    min-width: 280px;
+  }
+
+  .jobs-section {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .jobs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 }

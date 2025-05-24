@@ -23,32 +23,34 @@ const JobCard = ({jobDetails}) => {
           <img
             className="job-card-logo"
             src={companyLogoUrl}
-            width={50}
             alt="company logo"
+            width={50}
+            height={50}
+            loading="lazy"
           />
           <div className="job-card-details">
-            <h1 className="job-card-title">{title}</h1>
+            <h2 className="job-card-title">{title}</h2>
             <div className="job-card-rating">
               <IoMdStar className="job-card-star-icon" />
-              <p className="job-card-rating-text">{rating}</p>
+              <span className="job-card-rating-text">{rating}</span>
             </div>
           </div>
         </div>
         <div className="job-card-info">
           <div className="job-card-info-section">
             <div className="job-card-location">
-              <IoLocationSharp className="job-card-star-icon" />
-              <p className="job-card-location-text">{location}</p>
+              <IoLocationSharp className="job-card-icon" />
+              <span className="job-card-location-text">{location}</span>
             </div>
             <div className="job-card-employment-type">
-              <MdLocalPostOffice className="job-card-employment-icon" />
-              <p className="job-card-employment-text">{employmentType}</p>
+              <MdLocalPostOffice className="job-card-icon" />
+              <span className="job-card-employment-text">{employmentType}</span>
             </div>
           </div>
-          <p className="job-card-package">{packagePerAnnum}</p>
+          <span className="job-card-package">{packagePerAnnum}</span>
         </div>
         <hr className="job-card-divider" />
-        <h1 className="job-card-description-title">Description</h1>
+        <h3 className="job-card-description-title">Description</h3>
         <p className="job-card-description-text">{jobDescription}</p>
       </div>
     </Link>

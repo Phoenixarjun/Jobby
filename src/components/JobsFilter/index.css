@@ -1,24 +1,45 @@
+.jobFilter-container {
+  background-color: #272727;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 300px;
+  color: white;
+}
+
 .profile-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
 }
+
 .profile-heading {
   font-size: 18px;
   color: #6366f1;
+  margin: 0;
 }
+
 .profile-description {
   color: #6c7885;
   font-size: 12px;
+  margin: 0;
 }
+
 .employee-type h1,
 .salary-range h1 {
-  font-size: 14px;
+  font-size: 16px;
   color: white;
+  margin-bottom: 15px;
 }
+
 .filter-lists {
   margin: 0;
   padding: 0;
@@ -26,13 +47,82 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
-li {
-  padding: 0;
-  margin: 0;
+.checkBox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
-input{
-  margin: 0;
+
+.checkBox-container input[type="checkbox"],
+.checkBox-container input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #f8fafc;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkBox-container input[type="radio"] {
+  border-radius: 50%;
+}
+
+.checkBox-container input[type="checkbox"]:checked {
+  background-color: #6366f1;
+  border-color: #6366f1;
+}
+
+.checkBox-container input[type="radio"]:checked {
+  background-color: #6366f1;
+  border-color: #6366f1;
+}
+
+.checkBox-container input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkBox-container input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkBox-container label {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+hr {
+  border: 1px solid #64748b;
+  margin: 20px 0;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+@media (max-width: 768px) {
+  .jobFilter-container {
+    max-width: 100%;
+  }
 }

@@ -1,40 +1,81 @@
 .jobSearch-container {
   border: 1px solid #7e858e;
   border-radius: 5px;
-  width: 40vw;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #1e1e1c; 
+  overflow: hidden;
 }
+
 .searchBox {
-  width: 100%;
-  padding: 10px;
+  flex-grow: 1;
+  padding: 12px 16px;
   background-color: transparent;
   border: none;
   color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
+
 .searchBox:focus {
-  border: 0;
   outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
 }
+
 .searchBox::placeholder {
-  font-weight: bold;
+  font-weight: 600;
+  color: #bbb;
 }
+
 .searchBtn {
-  background-color: #1e1e1c;
+  background-color: #262724;
   padding: 0;
   border: none;
-  border-radius: 5px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  transition: background-color 0.3s ease;
 }
+
+.searchBtn:hover {
+  background-color: #3a3a38;
+}
+
 .search-icon {
-  font-size: 40px;
-  margin: 0;
+  font-size: 24px;
   color: white;
-  padding: 10px;
-  background-color: #1e1e1c;
-  border-radius: 5px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.error-message {
+  color: #ff4d4f;
+  font-size: 0.875rem;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .jobSearch-container {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  .searchBtn {
+    width: 40px;
+    height: 40px;
+  }
+  .search-icon {
+    font-size: 20px;
+  }
+  .searchBox {
+    font-size: 0.9rem;
+  }
 }

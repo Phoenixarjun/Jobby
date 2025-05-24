@@ -11,26 +11,24 @@ const Header = () => {
 
   return (
     <nav className="nav-container">
-      <Link to="/">
+      <Link to="/" className="logo-link">
         <img
           src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
           alt="website logo"
-          width={100}
+          className="site-logo"
         />
       </Link>
-
       <ul className="nav-lists">
-        <Link to="/" className="link">
-          <li>
-            <p>Home</p>
-          </li>
-        </Link>
-        <Link to="/jobs" className="link">
-          <li>
-            <p>Jobs</p>
-          </li>
-          <li></li>
-        </Link>
+        <li>
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/jobs" className="nav-link">
+            Jobs
+          </Link>
+        </li>
       </ul>
       <button className="logoutBtn" onClick={handleLogOut}>
         Logout

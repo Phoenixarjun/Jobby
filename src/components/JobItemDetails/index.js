@@ -8,7 +8,7 @@ import {IoLocationSharp} from 'react-icons/io5'
 import {IoMdStar} from 'react-icons/io'
 import SimilarJobCard from '../SimilarJobCard'
 import {FaExternalLinkAlt} from 'react-icons/fa'
-import Header from "../Header";
+import Header from '../Header'
 
 const apiStatusConstants = {
   initial: 'INITIAL',

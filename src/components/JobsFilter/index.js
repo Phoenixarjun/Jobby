@@ -31,8 +31,6 @@ const JobsFilter = ({
       if (response.ok) {
         const data = await response.json()
         setProfile(data.profile_details)
-      } else {
-        console.error(`Failed to fetch profile: ${response.status}`)
       }
     } catch (error) {
       console.error('Error fetching profile details:', error)
