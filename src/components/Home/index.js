@@ -8,7 +8,7 @@ const Home = () => {
   if (jwtToken === undefined) {
     return <Redirect to="/login" />
   }
-return (
+  return (
     <>
       <Header />
       <div className="home-page">

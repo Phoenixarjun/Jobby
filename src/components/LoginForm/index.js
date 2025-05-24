@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [usernameError, setUsernameError] = useState('')
   const [passwordError, setPasswordError] = useState('')
   const [showSubmitError, setShowSubmitError] = useState(false)
-  const [errorMsg, setErrorMsg] = useState('')
+  const [submitError, setSubmitError] = useState('')
 
   const history = useHistory()
 
@@ -21,8 +21,8 @@ const LoginForm = () => {
     history.replace('/')
   }
 
-  const onSubmitFailure = errorMsg => {
-    setErrorMsg(errorMsg)
+  const onSubmitFailure = errorMessage => {
+    setSubmitError(errorMessage)
     setShowSubmitError(true)
   }
 
@@ -103,7 +103,7 @@ const LoginForm = () => {
         </button>
       </form>
       {showSubmitError && !usernameError && !passwordError && (
-        <p className="error-message">*{errorMsg}</p>
+        <p className="error-message">*{submitError}</p>
       )}
     </div>
   )

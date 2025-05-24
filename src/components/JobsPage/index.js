@@ -30,7 +30,7 @@ const apiStatusConstants = {
 
 const JobsPage = () => {
   const [search, setSearch] = useState('')
-  const [jobsList, setJobsList] = useState([])
+  const [jobsData, setJobsData] = useState([])
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
   const [jobType, setJobType] = useState([])
   const [minPackage, setMinPackage] = useState('')
@@ -68,7 +68,7 @@ const JobsPage = () => {
           rating: item.rating,
           title: item.title,
         }))
-        setJobsList(updatedData)
+        setJobsData(updatedData)
         setApiStatus(apiStatusConstants.success)
       } else {
         setApiStatus(apiStatusConstants.failure)
@@ -122,10 +122,10 @@ const JobsPage = () => {
     </div>
   )
 
-  const JobsListComponent = ({jobsList}) =>
-    jobsList.length > 0 ? (
+  const renderJobsList = () =>
+    jobsData.length > 0 ? (
       <ul className="jobs-list">
-        {jobsList.map(job => (
+        {jobsData.map(job => (
           <JobCard key={job.id} jobDetails={job} />
         ))}
       </ul>
@@ -141,14 +141,14 @@ const JobsPage = () => {
       </div>
     )
 
-  const JobsComponent = ({apiStatus, jobsList, getJobs}) => {
+  const renderContent = () => {
     switch (apiStatus) {
       case apiStatusConstants.inProgress:
         return <LoaderComponent />
       case apiStatusConstants.failure:
         return <ErrorComponent onRetry={getJobs} />
       case apiStatusConstants.success:
-        return <JobsListComponent jobsList={jobsList} />
+        return renderJobsList()
       default:
         return null
     }
@@ -174,11 +174,7 @@ const JobsPage = () => {
                 errorShown={errorShown}
               />
             )}
-            <JobsComponent
-              apiStatus={apiStatus}
-              jobsList={jobsList}
-              getJobs={getJobs}
-            />
+            {renderContent()}
           </div>
         </div>
       </div>

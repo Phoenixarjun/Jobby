@@ -6,8 +6,8 @@ import Loader from 'react-loader-spinner'
 import {MdLocalPostOffice} from 'react-icons/md'
 import {IoLocationSharp} from 'react-icons/io5'
 import {IoMdStar} from 'react-icons/io'
-import SimilarJobCard from '../SimilarJobCard'
 import {FaExternalLinkAlt} from 'react-icons/fa'
+import SimilarJobCard from '../SimilarJobCard'
 import Header from '../Header'
 
 const apiStatusConstants = {
