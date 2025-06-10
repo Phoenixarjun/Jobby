@@ -40,8 +40,8 @@
 ## 📦 Setup Instructions
 
 ```bash
-git clone https://github.com/yourusername/jobby-app.git
-cd jobby-app
+git clone https://github.com/Phoenixarjun/Jobby
+cd Jobby
 npm install
 npm start
 ```
